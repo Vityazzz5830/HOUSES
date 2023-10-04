@@ -1764,3 +1764,10 @@ z-index: 1000000000000 !important;
   height: 127px;
   object-fit: contain;
 }
+
+.modal__content-сatalog_item-container-leftpart-uppart img{
+  max-width: 401px;
+  max-height: 376px;
+  object-fit: contain;
+}
+
