@@ -206,10 +206,6 @@ window.addEventListener("DOMContentLoaded", function() {
 
 });
 
-Copy
-
-
-
 function initMap (){
     map = new ymaps.Map("yandexmap", {
     center: [47.218785, 39.700424],
