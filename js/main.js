@@ -1,0 +1,328 @@
+
+
+$('.materials-slider').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: false,
+  infinite: true,
+  dots: false,
+  autoplay: false,
+});
+
+$('.reviews-slider').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: false,
+  infinite: true,
+  dots: false,
+  autoplay: false,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false, 
+      variableWidth: true
+      }
+    },
+         // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
+
+let refresh = document.getElementsByClassName('usehouse-slider');
+var tab2 = document.getElementById('tab2');
+
+
+window.addEventListener('DOMContentLoaded', function () {
+   $('.usehouse-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: false,
+        infinite: true,
+        dots: false,
+        autoplay: true,
+      });
+});
+
+ $(".label1").on('click',function() {
+      $('.usehouse-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: false,
+        infinite: true,
+        dots: false,
+        autoplay: true,
+      });
+      $('.usehouse-slider2').slick('unslick');
+    });
+
+
+    $(".label2").on('click',function() {
+      $('.usehouse-slider2').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: false,
+        infinite: true,
+        dots: false,
+        autoplay: true,
+      });
+      $('.usehouse-slider').slick('unslick');
+    });
+
+
+
+
+
+/*-------------ТАБ-МЕНЮ УСЛУГИ-------------*/
+
+let p_bold = document.getElementsByClassName('questions-list-item-title-p');
+let listitem = document.getElementsByClassName('questions-list-item');
+let wrapinfo = document.getElementsByClassName('questions-list-item-wrapinfo');
+
+listitem[0].addEventListener('click', function() {
+  wrapinfo[0].classList.toggle("questions-list-item-wrapinfo_js");
+  listitem[0].classList.toggle("questions-list-item-btnwrap-imgactive");
+  listitem[0].classList.toggle("questions-list-item-btnwrap-imgnoactive");
+  p_bold[0].classList.toggle("questions-list-item-title-p_js");
+  listitem[0].classList.toggle("questions-list-item_js");
+});
+
+listitem[1].addEventListener('click', function() {
+  wrapinfo[1].classList.toggle("questions-list-item-wrapinfo_js");
+  listitem[1].classList.toggle("questions-list-item-btnwrap-imgactive");
+  listitem[1].classList.toggle("questions-list-item-btnwrap-imgnoactive");
+  p_bold[1].classList.toggle("questions-list-item-title-p_js");
+  listitem[1].classList.toggle("questions-list-item_js");
+});
+
+listitem[2].addEventListener('click', function() {
+  wrapinfo[2].classList.toggle("questions-list-item-wrapinfo_js");
+  listitem[2].classList.toggle("questions-list-item-btnwrap-imgactive");
+  listitem[2].classList.toggle("questions-list-item-btnwrap-imgnoactive");
+  p_bold[2].classList.toggle("questions-list-item-title-p_js");
+  listitem[2].classList.toggle("questions-list-item_js");
+});
+
+listitem[3].addEventListener('click', function() {
+  wrapinfo[3].classList.toggle("questions-list-item-wrapinfo_js");
+  listitem[3].classList.toggle("questions-list-item-btnwrap-imgactive");
+  listitem[3].classList.toggle("questions-list-item-btnwrap-imgnoactive");
+  p_bold[3].classList.toggle("questions-list-item-title-p_js");
+  listitem[3].classList.toggle("questions-list-item_js");
+});
+
+listitem[4].addEventListener('click', function() {
+  wrapinfo[4].classList.toggle("questions-list-item-wrapinfo_js");
+  listitem[4].classList.toggle("questions-list-item-btnwrap-imgactive");
+  listitem[4].classList.toggle("questions-list-item-btnwrap-imgnoactive");
+  p_bold[4].classList.toggle("questions-list-item-title-p_js");
+  listitem[4].classList.toggle("questions-list-item_js");
+});
+
+var phoneInputs = document.querySelectorAll('input[data-tel-input]');
+
+$(phoneInputs).keypress( function(e) {
+    var chr = String.fromCharCode(e.which);
+    if ("7NOABC".indexOf(chr) < 0)
+        return false;
+});
+
+
+
+var nameInputs = document.querySelectorAll('input[data-name-input]');
+
+$(nameInputs).on('keypress', function() {
+    var that = this;
+
+    setTimeout(function() {
+        var res = /[^аА-яЯ]/g.exec(that.value);
+        console.log(res);
+        that.value = that.value.replace(res, '');
+    }, 0);
+});
+
+
+var emailInputs = document.querySelectorAll('input[data-email-input]');
+
+$(emailInputs).on('keypress', function() {
+    var that = this;
+
+    setTimeout(function() {
+        var res = /[^aA-zZ1234567890@.?!%&()><*-_]/g.exec(that.value);
+        console.log(res);
+        that.value = that.value.replace(res, '');
+    }, 0);
+});
+
+
+
+/*-----input number mask------*/
+document.addEventListener("DOMContentLoaded", function () {
+    var phoneInputs = document.querySelectorAll('input[data-tel-input]');
+    
+    var getInputNumbersValue = function (input) {
+        // Return stripped input value â€” just numbers
+        return input.value.replace(/\D/g, '');
+    }
+
+    var onPhonePaste = function (e) {
+        var input = e.target,
+            inputNumbersValue = getInputNumbersValue(input);
+        var pasted = e.clipboardData || window.clipboardData;
+        if (pasted) {
+            var pastedText = pasted.getData('Text');
+            if (/\D/g.test(pastedText)) {
+                // Attempt to paste non-numeric symbol â€” remove all non-numeric symbols,
+                // formatting will be in onPhoneInput handler
+                input.value = inputNumbersValue;
+                return;
+            }
+        }
+    }
+
+    var onPhoneInput = function (e) {
+        var input = e.target,
+            inputNumbersValue = getInputNumbersValue(input),
+            selectionStart = input.selectionStart,
+            formattedInputValue = "";
+
+        if (!inputNumbersValue) {
+            return input.value = "";
+        }
+
+        if (input.value.length != selectionStart) {
+            // Editing in the middle of input, not last symbol
+            if (e.data && /\D/g.test(e.data)) {
+                // Attempt to input non-numeric symbol
+                input.value = inputNumbersValue;
+            }
+            return;
+        }
+
+        if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
+            if (inputNumbersValue[0] == "9") inputNumbersValue = "7" + inputNumbersValue;
+            var firstSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7";
+            formattedInputValue = input.value = firstSymbols + " ";
+            if (inputNumbersValue.length > 1) {
+                formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+            }
+            if (inputNumbersValue.length >= 5) {
+                formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+            }
+            if (inputNumbersValue.length >= 8) {
+                formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+            }
+            if (inputNumbersValue.length >= 10) {
+                formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+            }
+        } else {
+            formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
+        }
+        input.value = formattedInputValue;
+    }
+    var onPhoneKeyDown = function (e) {
+        // Clear input after remove last symbol
+        var inputValue = e.target.value.replace(/\D/g, '');
+        if (e.keyCode == 8 && inputValue.length == 1) {
+            e.target.value = "";
+        }
+    }
+    for (var phoneInput of phoneInputs) {
+        phoneInput.addEventListener('keydown', onPhoneKeyDown);
+        phoneInput.addEventListener('input', onPhoneInput, false);
+        phoneInput.addEventListener('paste', onPhonePaste, false);
+    }
+})
+
+function initMap (){
+    map = new ymaps.Map("yandexmap", {
+    center: [47.218785, 39.700424],
+    zoom: 17,
+    controls: []
+    });
+}
+
+function newMetka (){
+    var myPlacemark = new ymaps.Placemark([47.218785, 39.700424], {}, {
+    preset: 'islands#redDotIcon'
+});
+    map.geoObjects.add(myPlacemark); 
+}
+
+ymaps.ready(initMap);
+ymaps.ready(newMetka);
+
+
+/*--------------BURGER MENU-----------------------*/
+
+const hamb = document.querySelector("#hamb");
+const popup = document.querySelector("#popup");
+const body = document.body;
+
+const btn1 = document.querySelector("#catalogbtn");
+const btn2 = document.querySelector("#materialsbtn");
+const btn3 = document.querySelector("#questionsbtn");
+const btn4 = document.querySelector("#reviewsbtn");
+const btn5 = document.querySelector("#contactsbtn");
+// Клонируем меню, чтобы задать свои стили для мобильной версии
+/*const menu = document.querySelector("#menu").cloneNode(1);*/
+
+// При клике на иконку hamb вызываем ф-ию hambHandler
+hamb.addEventListener("click", hambHandler);
+
+//hamb.addEventListener("mouseover", hambHandler);
+
+// Выполняем действия при клике ..
+function hambHandler(e) {
+  e.preventDefault();
+  // Переключаем стили элементов при клике
+  popup.classList.toggle("open");
+  hamb.classList.toggle("active");
+  body.classList.toggle("noscroll");
+  renderPopup();
+}
+
+// Здесь мы рендерим элементы в наш попап
+function renderPopup() {
+  popup.appendChild(menu);
+}
+
+btn1.addEventListener('click', function() {
+   popup.classList.toggle("open");
+   body.classList.toggle("noscroll");
+   renderPopup();
+});
+
+btn2.addEventListener('click', function() {
+   popup.classList.toggle("open");
+   body.classList.toggle("noscroll");
+   renderPopup();
+});
+
+btn3.addEventListener('click', function() {
+   popup.classList.toggle("open");
+   body.classList.toggle("noscroll");
+   renderPopup();
+});
+
+btn4.addEventListener('click', function() {
+   popup.classList.toggle("open");
+   body.classList.toggle("noscroll");
+   renderPopup();
+});
+
+btn5.addEventListener('click', function() {
+   popup.classList.toggle("open");
+   body.classList.toggle("noscroll");
+   renderPopup();
+});
