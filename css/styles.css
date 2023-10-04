@@ -1757,3 +1757,10 @@ footer{
 .fancybox__slide {
 z-index: 1000000000000 !important;
 }
+
+
+.modal__content-сatalog_item-container-leftpart-downpart img{
+  width: 127px;
+  height: 127px;
+  object-fit: contain;
+}
