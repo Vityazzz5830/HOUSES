@@ -701,7 +701,10 @@ margin-left: 0px;
   padding-right: 15px;
 }
 
-
+.usehouse-content{
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 
 /*-------------------------------ФУТЕР-------------------------------*/
 
