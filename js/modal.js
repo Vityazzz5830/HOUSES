@@ -54,5 +54,6 @@ const modal2 = document.querySelector("#modal-consult");
     const target = e.target // находим элемент, на котором был клик
     if (!target.closest('.modal__content-consult') && !target.closest('.form_contacts-sendbtn-modal')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
       MicroModal.close('modal-consult'); // то закрываем окно навигации, удаляя активный класс
+       body1.setAttribute('style', 'overflow-y: scroll');
     }
   })
