@@ -86,7 +86,8 @@
   }
 
   header{
-   
+     padding-left: 15px;
+    padding-right: 15px;
   }
 
   .header_main {
@@ -1005,6 +1006,48 @@ max-width: 375px;
 .modal__content-сatalog_item-container-leftpart-uppart > a:nth-child(1) {
   justify-content: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.catalog-content-list-item {
+padding-left: 0px;
+padding-right: 0px;
+align-items: center;
+}
+.catalog_image_mobile {
+margin-left: 0;
+margin-right: 0;
+}
+
+  .catalog-content-list-item {
+padding: 0px;
+}
+
+
+
+
+
+
+
+
+
+  
 
 }
 
