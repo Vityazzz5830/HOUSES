@@ -13,7 +13,7 @@ async function elementUpdate(selector) {
 }
 
 window.addEventListener('DOMContentLoaded', function () {
-  elementUpdate('.header');
+  
   elementUpdate('.whywe');
  
   elementUpdate('.team');
