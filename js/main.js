@@ -15,10 +15,10 @@ async function elementUpdate(selector) {
 window.addEventListener('DOMContentLoaded', function () {
   elementUpdate('.header');
   elementUpdate('.whywe');
-  elementUpdate('.materials');
+ 
   elementUpdate('.team');
   elementUpdate('.questions');
-  elementUpdate('.reviews');
+ 
   elementUpdate('.contacts');
   elementUpdate('.footer_mobile');
 });
