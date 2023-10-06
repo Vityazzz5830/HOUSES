@@ -145,6 +145,7 @@
   position: unset;
   margin: 0 auto;
   margin-top: 30px;
+  display: none !important;
 }
 
 .header_main-content a {
